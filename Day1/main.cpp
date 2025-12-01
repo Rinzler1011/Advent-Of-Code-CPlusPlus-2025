@@ -14,12 +14,28 @@
 *   Copyright (c) 2025 Robin (@RobinsAviary)
 *
 ********************************************************************************************/
-
+#include <fstream>
+#include <string>
+#include <iostream>
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
 int main(void)
 {
+
+ std::ifstream file("data.txt");
+    if (!file) {
+        std::cout << "Error: cannot open file\n";
+        return 1;
+    }
     
+    int num{0};
+    std::string line;
+    while (std::getline(file, line)) {
+        std::cout << line << "\n";
+        num++; 
+    }   
+
+    std::cout << num;
     return 0;
 }
