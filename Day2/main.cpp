@@ -18,7 +18,9 @@ bool isInvalidID(long long num) {
     if (len < 2) return false;
 
     for (std::size_t p = 1; p <= len / 2; ++p) {
-        if (len % p != 0) continue;  
+        if (len % p != 0) {
+            continue
+        };  
 
         std::string pattern = s.substr(0, p);
 
